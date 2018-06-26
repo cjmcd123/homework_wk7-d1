@@ -95,6 +95,17 @@ public class ThemePark {
                 }
             }
         }
+        for (Attraction attraction : getStalls()){
+            if (attraction instanceof ITickted) {
+                if (attraction instanceof ISecurity) {
+                    if (((ISecurity) attraction).isAllowedTo(visitor)) {
+                        results.add((ITickted) attraction);
+                    }
+                } else {
+                    results.add((ITickted) attraction);
+                }
+            }
+        }
         return results;
     }
 

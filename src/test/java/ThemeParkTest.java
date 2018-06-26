@@ -4,8 +4,6 @@ import org.junit.Test;
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNotSame;
 
 public class ThemeParkTest {
 
@@ -178,7 +176,7 @@ public class ThemeParkTest {
     public void listOfAllowed(){
         themePark.addAttraction(rollercoster);
         ArrayList<ITickted> results = themePark.getAllAllowedFor(visitor);
-        assertEquals(2, results.size());
+        assertEquals(4, results.size());
         String answer = results.get(0).getName();
         assertEquals("Codeclan Dodgems", answer);
     }
